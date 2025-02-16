@@ -121,7 +121,7 @@ REM *********************************
   )
   REM Nope, so check if it's a file bookmark
   if exist "%target%" (
-    call code "%target%"
+    start "" "%target%"
     GOTO :end
   )
   echo Unable to navigate to / open bookmark '%1'
