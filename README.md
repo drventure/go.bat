@@ -54,6 +54,15 @@ However, if you use an +Application Launcher+ like +PowerToys RUN+ or +FlowLaunc
 the GO repo folder in the list of folders to scan for executables. Doing that allows you to easily launch any of your GO 
 bookmarks directly from your launcher of choice.
 
-Since the bookmarks are just LNK files, if you use a customizable file manager (I prefer the excellent +Directory Opus+), you
+Note that in the case of using a launcher, GO.BAT itself doesn't actually get used. The launcher would directly open the shortcut
+lnk file for the bookmark itself. This works really nicely because, for folders, the launcher will simply open Explorer with the
+bookmarked folder highlighted.
+For file bookmarks, the launcher will open the file in it's associated editor.
+
+Also, since bookmarks are just LNK files, if you use a customizable file manager (I prefer the excellent +Directory Opus+), you
 can create a toolbar menu consisting of all the bookmarks in the GO REPO folder right within your file manager, making it
 equally convenient to use your bookmarks there as well.
+
+## Changing what to do with FILES
+Line 124 is where GO uses the START command to open the selected bookmarked file in it's associated application.
+Simply change that line so that instead of using START, you just call whatever editor you'd like.
